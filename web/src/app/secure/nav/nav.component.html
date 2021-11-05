@@ -1,0 +1,27 @@
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"
+    >Sistema de encuestas</a
+  >
+
+  <nav class="my-2 my-md-0 mr-md-n3">
+    <ng-container *ngIf="user">
+      <a routerLink="/profile" class="p-2 text-white text-decoration-none" *ngIf="user">
+        {{ user.name }}
+      </a>
+      <a
+        routerLink="/login"
+        class="p-2 text-white text-decoration-none"
+        (click)="logout()"
+      >
+        Cerrar sesión
+      </a>
+    </ng-container>
+    
+    <ng-container *ngIf="!user">
+      <span class="text-white">Cargando... </span>
+      <span class="spinner-border spinner-border-sm text-white" role="status" aria-hidden="true">
+      </span>
+    </ng-container>
+    
+  </nav>
+</header>

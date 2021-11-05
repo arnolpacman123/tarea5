@@ -1,0 +1,64 @@
+<ng-container *ngIf="user">
+  <div class="container py-md-5 px-md-5">
+    <h3>Información de la cuenta</h3>
+    <form [formGroup]="infoForm" (submit)="infoSubmit()">
+      <div class="mb-3">
+        <label>Nombre</label>
+        <input
+          formControlName="name"
+          class="form-control"
+          name="name"
+        />
+      </div>
+      <div class="mb-3">
+        <label>Teléfono</label>
+        <input
+          formControlName="phone"
+          class="form-control"
+          name="phone"
+        />
+      </div>
+      <div class="mb-3">
+        <label>Dirección</label>
+        <input
+          formControlName="address"
+          class="form-control"
+          name="address"
+        />
+      </div>
+      <div class="mb-3">
+        <label>Correo electrónico</label>
+        <input formControlName="email" class="form-control" name="email" />
+      </div>
+    
+      <button class="btn btn-primary">Guardar</button>
+    </form>
+  </div>
+  
+  <div class="container px-md-5">
+    <h3>Cambiar contraseña</h3>
+    <form [formGroup]="passwordForm" (submit)="passwordSubmit()">
+      <div class="mb-3">
+        <label>Nueva contraseña</label>
+        <input
+          formControlName="password"
+          type="password"
+          class="form-control"
+          name="password"
+        />
+      </div>
+      <div class="mb-3">
+        <label>Confirmar contraseña</label>
+        <input
+          formControlName="password_confirm"
+          type="password"
+          class="form-control"
+          name="password_confirm"
+        />
+      </div>
+    
+      <button class="btn btn-primary">Guardar</button>
+    </form>
+  </div>
+</ng-container>
+

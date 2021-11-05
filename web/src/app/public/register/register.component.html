@@ -1,0 +1,100 @@
+<div class="container py-md-5 px-md-5">
+  <main class="form-signin">
+    <form
+      [formGroup]="form"
+      class="row g-3"
+      (submit)="submit()"
+      autocomplete="off"
+    >
+      <h1 class="h3 mb-3 fw-normal text-center">Formulario de Registro</h1>
+      <div class="mb-3 row">
+        <input
+          formControlName="name"
+          class="form-control"
+          placeholder="Nombre"
+          required
+        />
+      </div>
+
+      <div class="mb-3 row">
+        <input
+          formControlName="phone"
+          class="form-control"
+          placeholder="Teléfono"
+          required
+        />
+      </div>
+
+      <div class="mb-3 row">
+        <input
+          formControlName="address"
+          class="form-control"
+          placeholder="Dirección"
+          required
+        />
+      </div>
+
+      <div class="mb-3 row">
+        <select
+          formControlName="gender"
+          class="form-select"
+          aria-label="Default select example"
+        >
+          <option selected disabled>Selecciona el género</option>
+          <option value="MASCULINO">MASCULINO</option>
+          <option value="FEMENINO">FEMENINO</option>
+        </select>
+      </div>
+
+      <div class="mb-3 row">
+        <input
+          formControlName="email"
+          type="email"
+          class="form-control"
+          placeholder="Correo electrónico"
+          required
+        />
+      </div>
+
+      <div class="mb-3 row">
+        <input
+          formControlName="password"
+          type="password"
+          class="form-control"
+          placeholder="Contraseña"
+          required
+        />
+      </div>
+
+      <div class="mb-3 row">
+        <input
+          formControlName="password_confirm"
+          type="password"
+          class="form-control"
+          placeholder="Confirmar contraseña"
+          required
+        />
+      </div>
+
+      <div class="mb-3 row" *ngIf="!loading">
+        <button class="w-100 btn btn-lg btn-primary" type="submit">
+          Registrarse
+        </button>
+      </div>
+
+      <div class="mb-3 row" *ngIf="loading">
+        <div class="d-flex justify-content-center text-primary">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3 row" *ngIf="userExists">
+        <div class="alert alert-danger text-center" role="alert">
+          <h5>¡El usuario ya existe!</h5>
+        </div>
+      </div>
+    </form>
+  </main>
+</div>
